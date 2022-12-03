@@ -4,7 +4,6 @@ import {ChildProcessWithoutNullStreams} from "child_process";
 export class StreamLogger {
 	constructor(private logger: StreamLoggerInterface) {
 	}
-
 	processOutput(stream: ChildProcessWithoutNullStreams) {
 		stream.stdout.on('data', (data: any) => {
 			this.logger.log(data);
