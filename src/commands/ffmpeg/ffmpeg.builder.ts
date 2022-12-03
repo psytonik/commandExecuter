@@ -4,7 +4,6 @@ export class FfmpegBuilder {
 	constructor() {
 		this.options.set('-s.v', 'libx264')
 	}
-
 	input(inputPath: string): this{
 		this.inputPath = inputPath;
 		return this;
@@ -15,7 +14,7 @@ export class FfmpegBuilder {
 	}
 	output(outputPath: string): string[] {
 		if(!this.inputPath){
-			throw new Error('Where original file ?')
+			throw new Error('Where a original file ?')
 		}
 		const args: string[] = ['-i', this.inputPath]
 		this.options.forEach((value, key)=>{
